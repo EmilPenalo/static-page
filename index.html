@@ -3,7 +3,7 @@
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Kalnia+Glaze:wght@100..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Kalnia+Glaze:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <meta charset="UTF-8" />
 <meta
@@ -17,6 +17,9 @@
     margin: 0;
     padding: 0;
     height: 100%;
+    min-height: 100vh; /* Fallback */
+    min-height: 100dvh; /* Safari-friendly dynamic height */
+    width: 100%;
   }
 
   /* Full-page background */
@@ -27,6 +30,7 @@
     align-items: center;
     background: #fff;
     overflow: hidden;
+    height: 100%;
 
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
@@ -37,8 +41,11 @@
 
   body::before {
     content: "";
-    position: absolute;
-    inset: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url("assets/valentines2026/bg.jpg");
     background-size: cover;
     background-position: center;
@@ -50,7 +57,8 @@
   p {
     margin: 0;
     padding: 0;
-    opacity: 0.80
+    opacity: 0.80;
+    overflow: visible;
   }
 
   .shiny-text {
@@ -164,7 +172,7 @@
   <div class="slides" id="slides">
 
     <!-- Slide Hello -->
-    <div class="slide debug-border active">
+    <div class="slide active">
       <p class="big-text move-up">
         Hello beautiful!
       </p>
